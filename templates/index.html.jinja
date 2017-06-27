@@ -1,0 +1,80 @@
+{% extends "facebook.html" %}
+{% block all %}
+<div class="page-header">
+	<h1><b>Facebook Status and Comments Scraping</b><br>
+</div>
+
+<body> 
+	<p> Facebook scraping tool consists of 2 parts: 
+<br>    1. Facebook <b>Statuses</b>, including the following information:<br>
+Status message, Status type, Status link, published date, number of reactions (like, wow, sad, etc), num of comments, number of shares, number of likes <br>
+<br>    2. Facebook <b>Comments</b>, including the following information:<br>
+Comments id, parents id (if this comment is a reply), comment message, comment author, comment date, likes on this comment 
+	<br>
+	<br>
+	<div class="row">
+		<div class="col-md-4">
+		<h2>Enter Facebook Page Name</h2>
+			Please enter Facebook Page name or Page ID. Refer to this page for a full list of RNW accounts.
+			<br>
+			<br>		
+			<form action="facebook" method="POST" class="form-inline">
+				<label for="fbid">Facebook Page Name: (No space in between)</label>
+				<input type="text" class="form-control" name="fbid" placeholder="e.g. LoveMattersAfrica">
+			 	<button type="submit" class="btn btn-default">Submit</button>
+			</form>
+		</div>
+		<div class="col-md-4">
+		<h2>Select time period</h2>
+			Please enter a start date and end date for the analysis. 
+			<br>
+			<br>
+		<form action="processdate" method="POST" class="form-inline">
+				<label for="date">Date</label>
+				<label for="start">Start Date:</label>
+				<input type="text" class="form-control" name="start" placeholder="e.g. 2017-05-01">
+				<label for="end">End Date:</label>
+				<input type="text" class="form-control" name="end" placeholder="e.g. 2017-05-10">
+			 	<button type="submit" class="btn btn-default">Submit</button>
+			</form>
+		</div>
+		<div class="col-md-4">
+		<h2>Get comments</h2>
+			Please enter Facebook Page name or Page ID. Refer to this page for a full list of RNW accounts.
+			<br>
+			<br>		
+			<form action="facebook_comments" method="POST" class="form-inline">
+				<label for="fbid_comments">Facebook Page Name: (No space in between)</label>
+				<input type="text" class="form-control" name="fbid_comments" placeholder="e.g. LoveMattersAfrica">
+			 	<button type="submit" class="btn btn-default">Submit</button>
+			</form>
+		</div>
+	</div>
+	<br><br>
+	<form action="kickoff">
+	<input type="submit" id="button" class="btn btn-primary" value="Get data & Analyze">
+	</form>
+	<br><br>
+	<table>
+			<tr>
+			    <th>Time of the Analysis</th>
+			    <th>Account Name</th>
+			    <th>Selected Period</th>
+			    <th>Data Overview</th>
+			 </tr>
+			<tr>
+			<td>
+				{{summary['time_of_analysis'][0]}}
+			</td>
+			<td> 
+				{{summary['fb_id'][0] }}
+			</td>
+			<td>
+				{{summary['period_selected'][0]}}
+			</td>
+			<td>
+				<a href="/overview/{{ summary['fb_id'][0] }}">Overview</a>
+			</td>
+			</tr> 
+</body>
+{% endblock %}

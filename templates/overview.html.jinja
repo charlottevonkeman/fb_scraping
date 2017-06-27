@@ -1,0 +1,281 @@
+{% extends "facebook.html" %}
+{% block all %}
+
+<div class="page-header">
+	<h3><b>Overview of Facebook Activity for {{summary['fb_id'][0]}} during {{summary['period_selected'][0]}} </h3></b><br>
+</div>
+
+<body>
+
+<div class="row">
+	<div class="col-md-3">
+		<h3>Number of Statuses Published</h3>
+		<p><i> total number of facebook feed published by {{summary['fb_id'][0]}}</i></p>
+		<h2>{{summary['num_of_status'][0]}}</h2>
+	</div>
+	<div class="col-md-3">
+		<h3>Total Number of Discussions</h3>
+		<p><i>Total number of replies to other people's comments</i></p>
+		<h2>{{summary['number_of_discussion'][0]}}</h2>
+	</div>
+	<div class="col-md-3">
+		<h3>Daily Engagement</h3>
+		<p><i>Average Like + Comments + Shares received every day</i></p>
+		<h3>{{summary['daily_engagement'][0]}}</h2>
+	</div>
+	<div class="col-md-3">
+		<h3>Average Comments Length</h3>
+		<p><i>Longer comments might indicate higher quality engagement</i></p>
+		<h2>{{summary['avg_comment_len'][0]}}</h2>
+	</div>
+</div>
+
+<br><br>
+<div class="row">
+	<div class="col-md-3">
+		<h3>Top 5 Superusers</h3>
+		<table>
+		<thead>
+			<th>User Name</th>
+			<th>Number of Interaction with {{summary['fb_id'][0]}}</th>
+		</thead>
+		<tbody>
+		<tr>
+			<td>
+			Love Matters Africa
+			</td>
+			<td>
+			162
+			</td>
+		</tr>
+			<td>
+			Winnie Mtall
+			</td>
+			<td>
+			54
+			</td>
+		<tr>
+			<td>
+			Amiable Mbuyi Victor
+			</td>
+			<td>
+			29
+			</td>
+		</tr>
+		<tr>
+			<td>
+			YoungJay Musa
+			</td>
+			<td>
+			29
+			</td>
+		</tr>
+		<tr>
+			<td>
+			Ruth Alimogum
+			</td>
+			<td>
+			28
+			</td>
+		</tr>
+		</tbody>
+		</table>
+	</div>
+	<div class="col-md-3">
+		<h3>Most frequently used words in user comments</h3>
+		<table>
+		<thead>
+			<th>Frequently used words</th>
+			<th>Frequency</th>
+		</thead>
+		<tbody>
+		<tr>
+			<td>
+			[[STICKER]]
+			</td>
+			<td>
+			177
+			</td>
+		</tr>
+		<tr>
+			<td>
+			True
+			</td>
+			<td>
+			77
+			</td>
+		</tr>
+		<tr>
+			<td>
+			Amen
+			</td>
+			<td>
+			38
+			</td>
+		</tr>
+		<tr>
+			<td>
+			Very true
+			</td>
+			<td>
+			34
+			</td>
+		</tr>
+		<tr>
+			<td>
+			Sure
+			</td>
+			<td>
+			14
+			</td>
+		</tr>
+		<tr>
+			<td>
+			True
+			</td>
+			<td>
+			13
+			</td>
+		</tr>
+		<tr>
+			<td>
+			Exactly
+			</td>
+			<td>
+			10
+			</td>
+		</tr>
+		<tr>
+			<td>
+			No
+			</td>
+			<td>
+			10
+			</td>
+		</tr>
+		<tr>
+			<td>
+			I agree
+			</td>
+			<td>
+			8
+			</td>
+		</tr>
+		<tr>
+			<td>
+			B-)
+			</td>
+			<td>
+			7
+			</td>
+		</tr>
+		</tbody>
+		</table>
+	</div>
+	<div class="col-md-3">
+		<h3>Topics in Status</h3>
+		<table>
+		<thead>
+			<th>Content Group</th>
+			<th>Keywords frequently appreared together * frequency</th>
+		</thead>
+		<tbody>
+		<tr>
+			<td>
+			1
+			</td>
+			<td>
+			0.038*"get" + 0.038*"httpslovematterscoke" + 0.025*"information" + 0.020*"relationship" + 0.014*"teamlovematters" + 0.013*"sex" + 0.013*"it" + 0.013*"condom" + 0.010*"right" + 0.010*"life"
+			</td>
+		</tr>
+		<tr>
+			<td>
+			2
+			</td>
+			<td>
+			0.011*"way" + 0.011*"research" + 0.011*"learn" + 0.008*"partner" + 0.008*"kenyabuzz" + 0.008*"marie" + 0.008*"stopes" + 0.008*"kenya" + 0.008*"via"
+			</td>
+		</tr>
+		<tr>
+			<td>
+			3
+			</td>
+			<td>
+			0.012*"people" + 0.012*"know" + 0.010*"partner" + 0.010*"one" + 0.010*"want" + 0.010*"love" + 0.010*"it" + 0.010*"like" + 0.008*"make" + 0.008*"dont"
+			</td>
+		</tr>
+		<tr>
+			<td>
+			4
+			</td>
+			<td>
+			0.015*"getting" + 0.011*"lot" + 0.010*"good" + 0.008*"do" + 0.008*"join" + 0.008*"kenyabuzz" + 0.008*"woman" + 0.008*"family" + 0.008*"it" + 0.008*"answer"
+			</td>
+		</tr>
+		<tr>
+			<td>
+			5
+			</td>
+			<td>
+			0.078*"teamlovematters" + 0.043*"good" + 0.031*"night" + 0.029*"morning" + 0.021*"think" + 0.021*"enjoy" + 0.012*"agree" + 0.011*"always" + 0.011*"know" + 0.011*"dont"
+			</td>
+		</tr>
+		</tbody>
+		</table>
+	</div>
+	<div class="col-md-3">
+		<h3>Topics in Content</h3>
+		<table>
+		<thead>
+			<th>Content Group</th>
+			<th>Keywords frequently appreared together * frequency</th>
+		</thead>
+		<tbody>
+		<tr>
+			<td>
+			1
+			</td>
+			<td>
+			0.040*"sticker" + 0.020*"sex" + 0.010*"relationship" + 0.009*"time" + 0.009*"right" + 0.006*"it" + 0.006*"love" + 0.006*"friend" + 0.006*"use" + 0.006*"good"
+			</td>
+		</tr>
+		<tr>
+			<td>
+			2
+			</td>
+			<td>
+			0.061*"true" + 0.018*"love" + 0.013*"amen" + 0.009*"agree" + 0.008*"god" + 0.007*"it" + 0.007*"yeah" + 0.006*"dont" + 0.006*"thats" + 0.006*"marriage"
+			</td>
+		</tr>
+		<tr>
+			<td>
+			3
+			</td>
+			<td>
+			0.013*"love" + 0.009*"ya" + 0.008*"it" + 0.008*"ur" + 0.007*"take" + 0.006*"no" + 0.006*"problem" + 0.005*"better" + 0.005*"ni" + 0.005*"condom"
+			</td>
+		</tr>
+		<tr>
+			<td>
+			4
+			</td>
+			<td>
+			0.102*"u" + 0.016*"ur" + 0.014*"n" + 0.010*"dont" + 0.010*"sex" + 0.010*"r" + 0.009*"love" + 0.009*"bt" + 0.009*"2" + 0.008*"b"
+			</td>
+		</tr>
+		<tr>
+			<td>
+			5
+			</td>
+			<td>
+			0.017*"u" + 0.013*"sex" + 0.011*"man" + 0.008*"ur" + 0.008*"one" + 0.007*"wife" + 0.006*"without" + 0.006*"dont" + 0.006*"advice" + 0.006*"exactly"
+			</td>
+		</tr>
+		</tbody>
+		</table>
+	</div>
+</div>
+
+</body>
+
+{% endblock %}

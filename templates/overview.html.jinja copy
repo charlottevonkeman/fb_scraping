@@ -1,0 +1,55 @@
+{% extends "facebook.html" %}
+{% block all %}
+
+<div class="page-header">
+	<h3><b>Overview of Facebook Activity for {{summary['fb_id'][0]}} during {{summary['period_selected'][0]}} </h3></b><br>
+</div>
+
+<body>
+
+<div class="row">
+	<div class="col-md-3">
+		<h3>Total Number of Discussions</h3>
+		<p><i>Total number of replies to other people's comments</i></p>
+		<h2>{{summary['number_of_discussion'][0]}}</h2>
+	</div>
+	<div class="col-md-3">
+		<h3>Number of Statuses Published</h3>
+		<p><i> total number of facebook feed published by {{summary['fb_id'][0]}}</i></p>
+		<h2>{{summary['num_of_status'][0]}}</h2>
+	</div>
+	<div class="col-md-3">
+		<h3>Daily Engagement</h3>
+		<p><i>Average Like + Comments + Shares received every day</i></p>
+		<h3>{{summary['daily_engagement'][0]}}</h2>
+	</div>
+	<div class="col-md-3">
+		<h3>Average Comments Length</h3>
+		<p><i>Longer comments might indicate higher quality engagement</i></p>
+		<h2>{{summary['avg_comment_len'][0]}}</h2>
+	</div>
+</div>
+
+<br><br>
+<div class="row">
+	<div class="col-md-3">
+		<h3>Top 5 Superusers</h3>
+		{{summary['superusers'][0]}}
+	</div>
+	<div class="col-md-3">
+		<h3>Most frequently used words in user comments</h3>
+		{{summary['frequently_used_words'][0]}}
+	</div>
+	<div class="col-md-3">
+		<h3>Topics in Status</h3>
+		{{summary['status_topics'][0]}}
+	</div>
+	<div class="col-md-3">
+		<h3>Topics in Content</h3>
+		{{summary['comments_topics'][0]}}
+	</div>
+</div>
+
+</body>
+
+{% endblock %}
